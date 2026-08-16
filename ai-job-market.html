@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Job Market Finder — Nomsa Nyalugwe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F8F4; --paper-raised:#FFFFFF; --ink:#171B1F; --ink-soft:#535B63; --ink-faint:#8B939B;
+    --line:#DEE2DD; --indigo:#2D3E68; --amber:#C6862B; --radius:2px; --maxw:880px;
+  }
+  *{box-sizing:border-box;}
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:'IBM Plex Sans', sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased; }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 32px; }
+  a{ color:var(--indigo); }
+
+  header.nav{ position:sticky; top:0; z-index:50; background:rgba(247,248,244,0.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); }
+  .nav-inner{ max-width:var(--maxw); margin:0 auto; padding:18px 32px; }
+  .back-link{ font-family:'IBM Plex Mono', monospace; font-size:12.5px; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); }
+  .back-link:hover{ color:var(--ink); }
+
+  .hero{ padding:56px 0 24px; }
+  .eyebrow{ font-family:'IBM Plex Mono', monospace; font-size:12.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--amber); display:flex; align-items:center; gap:10px; margin-bottom:18px; }
+  .eyebrow::before{ content:""; width:28px; height:1px; background:var(--amber); display:inline-block; }
+  h1{ font-family:'Fraunces', serif; font-weight:600; font-size:clamp(30px,5vw,44px); line-height:1.1; margin:0 0 14px; }
+  .subtitle{ font-family:'IBM Plex Mono', monospace; font-size:15px; color:var(--indigo); margin-bottom:22px; }
+  .meta{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:8px; }
+  .tag{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.03em; color:var(--indigo); background:#EDF0F7; padding:5px 10px; border-radius:var(--radius); }
+
+  section{ padding:32px 0; border-top:1px solid var(--line); }
+  h2{ font-family:'Fraunces', serif; font-weight:600; font-size:22px; margin:0 0 14px; }
+  p{ color:var(--ink-soft); font-size:16px; margin:0 0 14px; }
+  ul{ color:var(--ink-soft); font-size:16px; padding-left:20px; margin:0 0 14px; }
+  li{ margin-bottom:8px; }
+
+  .panel-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:20px 0; }
+  @media (max-width:700px){ .panel-grid{ grid-template-columns:1fr; } }
+  .panel{ background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius); padding:20px; }
+  .panel h3{ font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 10px; }
+  .panel p{ margin:0; font-size:15px; }
+
+  pre{ background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius); padding:16px; overflow-x:auto; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--ink); line-height:1.5; }
+  code{ font-family:'IBM Plex Mono', monospace; }
+
+  .note{ background:#EDF0F7; border-radius:var(--radius); padding:16px 20px; font-size:14.5px; color:var(--ink-soft); }
+
+  footer{ padding:40px 32px; text-align:center; font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--ink-faint); }
+</style>
+</head>
+<body>
+
+<header class="nav"><div class="nav-inner"><a class="back-link" href="../index.html">← Back to portfolio</a></div></header>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow">FIG. 03 — INTERACTIVE APP</div>
+    <h1>AI Job Market Finder</h1>
+    <div class="subtitle">Python · Shiny for Python · Plotly, plotnine, WordCloud</div>
+    <div class="meta">
+      <span class="tag">Python</span>
+      <span class="tag">Shiny</span>
+      <span class="tag">Plotly</span>
+      <span class="tag">Interactive Dashboard</span>
+    </div>
+  </div>
+
+  <section>
+    <h2>Overview</h2>
+    <p>An interactive web app built with Shiny for Python that lets users explore a Kaggle AI job market dataset — filtering by job title, experience level, company, and required skills, then browsing salary trends, job demand, and skills analysis through linked, reactive visualizations. All charts update live as filters change, so a user can go from "AI jobs in general" to "Senior ML Engineer roles requiring PyTorch" in a few clicks.</p>
+  </section>
+
+  <section>
+    <h2>What it does</h2>
+    <div class="panel-grid">
+      <div class="panel">
+        <h3>Salary &amp; Experience</h3>
+        <p>Average salary trend by experience level, salary comparison by job title and experience (grouped bar), job count by experience level, and a full min/avg/max salary range breakdown.</p>
+      </div>
+      <div class="panel">
+        <h3>Job Demand</h3>
+        <p>A bar chart of job title demand across the filtered dataset, showing which roles appear most frequently in current postings.</p>
+      </div>
+      <div class="panel">
+        <h3>Skills Analysis</h3>
+        <p>A word cloud generated live from the "skills required" field across all filtered postings, sized by frequency — a fast way to see which skills dominate a given slice of the market.</p>
+      </div>
+      <div class="panel">
+        <h3>Job Explorer</h3>
+        <p>A searchable, filterable data table of the underlying postings, so a user can drop from the charts straight into the raw rows behind them.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>How it's built</h2>
+    <p>The app parses a min–max salary range field into numeric min, max, and average columns on load, then builds four selectize filters (job title, experience level, company, skills) that all feed a single reactive <code>df_filtered()</code> calculation. Every chart reads from that one filtered dataframe, so the whole dashboard stays in sync no matter which filter changes.</p>
+    <p>Charts are split across three libraries depending on the job: Plotly for the interactive salary and demand charts (hover, zoom), plotnine for a clean ggplot-style bar chart of job title demand, and matplotlib/WordCloud for the skills visualization. Empty-state handling was built in for every chart, so an over-filtered view shows a clear "no data" message instead of a broken plot.</p>
+    <pre><code># Reactive core — every chart reads from this one filtered frame
+@reactive.calc
+def df_filtered():
+    sel_job = input.job()
+    sel_experience = input.experience()
+    sel_company = input.company()
+    sel_skill = input.skill()
+
+    filtered_df = df.copy()
+    if sel_job:
+        filtered_df = filtered_df[filtered_df["job_title"].isin(sel_job)]
+    if sel_experience:
+        filtered_df = filtered_df[filtered_df["experience_level"].isin(sel_experience)]
+    if sel_company:
+        filtered_df = filtered_df[filtered_df["company_name"].isin(sel_company)]
+    if sel_skill:
+        filtered_df = filtered_df[filtered_df["skills_required"].isin(sel_skill)]
+    return filtered_df</code></pre>
+    <p class="note">The app also includes a dark-mode toggle (<code>ui.input_dark_mode()</code>) and a tabbed layout (<code>navset_tab</code> / <code>navset_card_tab</code>) so the three analysis areas — salary, demand, skills — stay organized rather than stacked on one long page.</p>
+  </section>
+
+  <section>
+    <h2>Stack</h2>
+    <ul>
+      <li><strong>Shiny for Python</strong> (Express UI) for the reactive app framework</li>
+      <li><strong>Plotly</strong> via <code>shinywidgets</code> for interactive charts</li>
+      <li><strong>plotnine</strong> for a ggplot2-style static bar chart</li>
+      <li><strong>WordCloud + matplotlib</strong> for the skills word cloud</li>
+      <li><strong>pandas</strong> for all data wrangling and the reactive filter pipeline</li>
+    </ul>
+  </section>
+</div>
+
+<footer>© 2026 Nomsa Nyalugwe</footer>
+</body>
+</html>

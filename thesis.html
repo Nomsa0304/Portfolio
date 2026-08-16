@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MSc Thesis: Heavy-Tailed Distributions — Nomsa Nyalugwe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F8F4; --paper-raised:#FFFFFF; --ink:#171B1F; --ink-soft:#535B63; --ink-faint:#8B939B;
+    --line:#DEE2DD; --indigo:#2D3E68; --amber:#C6862B; --radius:2px; --maxw:880px;
+  }
+  *{box-sizing:border-box;}
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:'IBM Plex Sans', sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased; }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 32px; }
+  a{ color:var(--indigo); }
+
+  header.nav{ position:sticky; top:0; z-index:50; background:rgba(247,248,244,0.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); }
+  .nav-inner{ max-width:var(--maxw); margin:0 auto; padding:18px 32px; }
+  .back-link{ font-family:'IBM Plex Mono', monospace; font-size:12.5px; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); }
+  .back-link:hover{ color:var(--ink); }
+
+  .hero{ padding:56px 0 24px; }
+  .eyebrow{ font-family:'IBM Plex Mono', monospace; font-size:12.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--amber); display:flex; align-items:center; gap:10px; margin-bottom:18px; }
+  .eyebrow::before{ content:""; width:28px; height:1px; background:var(--amber); display:inline-block; }
+  h1{ font-family:'Fraunces', serif; font-weight:600; font-size:clamp(28px,4.6vw,42px); line-height:1.15; margin:0 0 14px; }
+  .subtitle{ font-family:'IBM Plex Mono', monospace; font-size:15px; color:var(--indigo); margin-bottom:22px; }
+  .meta{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:8px; }
+  .tag{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.03em; color:var(--indigo); background:#EDF0F7; padding:5px 10px; border-radius:var(--radius); }
+
+  section{ padding:32px 0; border-top:1px solid var(--line); }
+  h2{ font-family:'Fraunces', serif; font-weight:600; font-size:22px; margin:0 0 14px; }
+  h3{ font-family:'Fraunces', serif; font-weight:600; font-size:17px; margin:20px 0 8px; }
+  p{ color:var(--ink-soft); font-size:16px; margin:0 0 14px; }
+  ul{ color:var(--ink-soft); font-size:16px; padding-left:20px; margin:0 0 14px; }
+  li{ margin-bottom:8px; }
+
+  .committee{ background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius); padding:18px 22px; font-size:14.5px; color:var(--ink-soft); margin-bottom:8px; }
+  .committee strong{ color:var(--ink); }
+
+  .chapters{ display:flex; flex-direction:column; }
+  .chapter{ display:grid; grid-template-columns:90px 1fr; gap:20px; padding:20px 0; border-top:1px solid var(--line); }
+  .chapter:last-child{ border-bottom:1px solid var(--line); }
+  .chapter .idx{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--amber); }
+  .chapter h4{ font-family:'Fraunces', serif; font-size:17px; font-weight:600; margin:0 0 8px; }
+  .chapter p{ margin:0; font-size:15px; }
+
+  .findings{ background:var(--paper-raised); border:1px solid var(--line); padding:22px; border-radius:var(--radius); }
+
+  footer{ padding:40px 32px; text-align:center; font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--ink-faint); }
+</style>
+</head>
+<body>
+
+<header class="nav"><div class="nav-inner"><a class="back-link" href="../index.html">← Back to portfolio</a></div></header>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow">FIG. 01 — MSC THESIS</div>
+    <h1>New Generalized Families and Classes of Heavy-Tailed Distributions with Applications</h1>
+    <div class="subtitle">MSc Statistics · Botswana International University of Science &amp; Technology · March 2025</div>
+    <div class="meta">
+      <span class="tag">Statistical Theory</span>
+      <span class="tag">R</span>
+      <span class="tag">Maximum Likelihood Estimation</span>
+      <span class="tag">Actuarial Risk Measures</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="committee">
+      <strong>Supervisors:</strong> Dr Fastel Chipepa &amp; Professor Broderick Oluyede, Department of Mathematics &amp; Statistical Sciences, BIUST
+    </div>
+  </section>
+
+  <section>
+    <h2>Abstract</h2>
+    <p>This thesis develops three new generalized families of heavy-tailed probability distributions: the Heavy-Tailed-Type II Topp-Leone-G (HT-TIITL-G) distribution, the Heavy-Tailed-Type II Topp-Leone-G Power Series (HT-TIITL-GPS) distribution, and the Topp-Leone-Generalized Exponentiated Half Logistic-G (TL-GEHL-G) distribution. For each family, I derived core mathematical properties — moment generating functions, incomplete moments, linear representations, order statistics, and entropy — estimated parameters via maximum likelihood, and evaluated performance through Monte Carlo simulation. I also derived actuarial risk measures and benchmarked all three families against established models on real datasets using multiple goodness-of-fit tests. Across every dataset tested, the proposed distributions outperformed existing models at capturing heavy-tailed behavior.</p>
+  </section>
+
+  <section>
+    <h2>Why heavy-tailed distributions</h2>
+    <p>Standard distributions like Weibull, Pareto, and log-logistic are foundational in reliability engineering, survival analysis, and risk management, but each has real limits: Weibull's tail isn't heavy enough for extreme events, Pareto's shape is too rigid across different datasets, and log-logistic lacks the tail weight needed when modeling rare, extreme outcomes. This gap is exactly where heavy-tailed distributions matter — insurance claims, financial risk, equipment failure times, and cancer remission times all involve exactly the kind of extreme-value behavior these classical models struggle to capture. My thesis builds new distribution families specifically to close that gap.</p>
+  </section>
+
+  <section>
+    <h2>Structure of the work</h2>
+    <div class="chapters">
+      <div class="chapter">
+        <div class="idx">CH. 2</div>
+        <div>
+          <h4>HT-TIITL-G Family</h4>
+          <p>Introduces the base family, derives its quantile function, moments, order statistics, and Rényi entropy, and evaluates the HT-TIITL-Weibull special case on a reliability engineering dataset (cutting-machine failure times) and a bladder cancer remission dataset — outperforming the Weibull, TI-HTW, HLGW, and HT-BPTW models on every goodness-of-fit statistic tested.</p>
+        </div>
+      </div>
+      <div class="chapter">
+        <div class="idx">CH. 3</div>
+        <div>
+          <h4>HT-TIITL-GPS Class</h4>
+          <p>Extends the family by compounding it with power series distributions (Poisson, geometric, binomial, logarithmic), producing the HT-TIITL-WP special case. Applied to analgesic relief-time data and bank customer waiting times, this model achieved the highest K-S p-value and lowest error statistics among six competing models.</p>
+        </div>
+      </div>
+      <div class="chapter">
+        <div class="idx">CH. 4</div>
+        <div>
+          <h4>TL-GEHL-G Family</h4>
+          <p>Combines the Topp-Leone generator with the generalized exponentiated half-logistic distribution. The TL-GEHL-Weibull special case was tested on Kevlar-49/epoxy strand failure-time data and the same cancer remission dataset, again outperforming six alternative models including Marshall-Olkin Weibull-Logarithmic and Topp-Leone-Gompertz-Weibull.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Methods</h2>
+    <ul>
+      <li><strong>Maximum likelihood estimation</strong> to fit every proposed distribution, with standard errors derived from the estimated variance-covariance matrix</li>
+      <li><strong>Monte Carlo simulation</strong> (sample sizes from n=25 to n=1000, 3,000 replications per size) to confirm estimator bias and RMSE shrink as sample size grows</li>
+      <li><strong>Actuarial risk measures</strong> — Value-at-Risk, Tail Value-at-Risk, Tail Variance, and Tail Variance Premium — derived analytically for each family and compared numerically against benchmark distributions</li>
+      <li><strong>Goodness-of-fit testing</strong> — AIC, BIC, Cramér-von Mises, Anderson-Darling, and Kolmogorov-Smirnov statistics — across every real-data application, backed by Kaplan-Meier survival curves, PP plots, and TTT plots</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Key findings</h2>
+    <div class="findings">
+      <ul>
+        <li>All three proposed families showed consistently <strong>heavier tails</strong> (higher VaR, TVaR, TV, TVP) than the classical Weibull and existing heavy-tailed benchmarks, confirming they capture extreme-value behavior these established models miss.</li>
+        <li>On every one of the six real datasets tested — spanning reliability engineering, oncology, pharmacology, banking, and materials science — a special case of one of the three new families was the <strong>best-fitting model</strong>, based on AIC/BIC and K-S p-values.</li>
+        <li>Simulation studies confirmed the MLE-based estimators are <strong>consistent</strong>: bias and RMSE shrink predictably as sample size increases from 25 to 1,000.</li>
+        <li>The hazard rate functions derived from these families can take on <strong>reverse-J, bathtub, and inverted-bathtub shapes</strong> — the range needed to model everything from early-life failures to wear-out failures in one framework.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<footer>© 2026 Nomsa Nyalugwe</footer>
+</body>
+</html>
